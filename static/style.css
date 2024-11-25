@@ -1,0 +1,80 @@
+/* Toàn bộ body */
+body {
+  font-family: "Arial", sans-serif;
+  margin: 20px auto;
+  max-width: 800px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Tiêu đề chính */
+h1,
+h2 {
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Form thêm công việc */
+form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Ô nhập */
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+}
+
+/* Nút bấm */
+button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Hover nút bấm */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Danh sách công việc */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+
+/* Nút bấm nhỏ */
+button.update-btn,
+button.delete-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
