@@ -1,53 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Simple Todo App</title>
     <link
       rel="stylesheet"
-      href=" {{ url_for('static', filename='style.css') }}"
+      href="{{ url_for('static', filename='style.css') }}"
     />
-    <title>Simple Todo App</title>
   </head>
   <body>
-    <div>
-      <h1>Create</h1>
-      <form method="POST" action="/add">
-        <input
-          type="text"
-          name="description"
-          placeholder="Add a new TODO item"
-          required
-        />
-        <button type="submit">Create new</button>
+    <div class="container">
+      <h2>Create</h2>
+      <form method="POST" action="/">
+        <div>
+          <input
+            type="text"
+            name="itemDescription"
+            placeholder="Add a new TODO item"
+          />
+          <button type="submit" value="update">Create new</button>
+        </div>
       </form>
 
       <h2>List</h2>
-      <ul>
-        {% for item in todoList %}
-        <li>
-          <div>
-            <input type="checkbox" {% if item['status'] == 'Done' %}checked{%
-            endif %}>
-            <span>{{ item['description'] }}</span>
-          </div>
-          <div>
-            <form
-              method="POST"
-              action="/update/{{ item['id'] }}"
-              style="display: inline"
-            >
-              <button type="submit" class="update-btn">Update</button>
-            </form>
-            <form
-              method="POST"
-              action="/delete/{{ item['id'] }}"
-              style="display: inline"
-            >
-              <button type="submit" class="delete-btn">Delete</button>
-            </form>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
+      {% for item in todoList: %}
+      <p>{{ item }}</p>
+      {% endfor %}
     </div>
   </body>
 </html>
