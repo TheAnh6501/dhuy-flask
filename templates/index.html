@@ -10,21 +10,44 @@
   <body>
     <div class="container">
       <h2>Create</h2>
-      <form method="POST" action="/">
-        <div>
-          <input
-            type="text"
-            name="itemDescription"
-            placeholder="Add a new TODO item"
-          />
-          <button type="submit" value="update">Create new</button>
-        </div>
+      <form action="">
+        <label for=" description">Todo Description</label>
+        <input
+          type="text"
+          name="description"
+          id=""
+          placeholder="Enter your description..."
+        />
+        <br />
+        <button type="submit">Add</button>
       </form>
 
       <h2>List</h2>
-      {% for item in todoList: %}
-      <p>{{ item }}</p>
+      {% for todo in todoList %}
+      <form action="">
+        <div class="todo">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            name="description"
+            id=""
+            value="{{ todo['description'] }}"
+            readonly
+          />
+          <label for="status">Status</label>
+          <input
+            type="text"
+            name="status"
+            id=""
+            value="{{ todo['status'] }}"
+            readonly
+          />
+          <button type="submit">Update</button>
+          <button type="submit">Delete</button>
+        </div>
+      </form>
       {% endfor %}
     </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </body>
 </html>
